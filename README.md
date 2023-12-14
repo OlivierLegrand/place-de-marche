@@ -29,7 +29,7 @@ Le jeu de données se présente sous la forme d'une table de 1050 lignes et 15 c
 
 A chaque produit sont associées plusieurs catégories organisées hiérarchiquement selon 7 niveaux; mais la plupart des produits ne sont pas associés à 7 catégories différentes: les niveaux 6 et 7 de la hiérarchie sont vides pour la plupart des produits: 
 
-![catégories](docs/catégories.png "Catégories")
+![catégories](docs/categories.png "Catégories")
 
 Par ailleurs, il y a exactement 150 produits par catégorie au niveau 0. Ceci conduit à ne choisir de tester la possibilité de classer les produits qu'en se référant aux catégores les plus "larges", c'est-à-dire celles du niveau 0.
 
