@@ -1,43 +1,21 @@
-# temp files
+# Jupyter notebook
 .ipynb_checkpoints
+
+# Byte-compiled / optimized
 __pycache__
+
+# OS generated
 .DS_Store
+
+# vim backup files
 *~
 
-# venv
-*_env
+# Environment
+pdm_env
 
-
-# data of all sorts
-*data
-images
-P6/zip_files
-#P7/sample_data
-#P7/project_files
-#P7/RFmodel
-#P7/A\ faire.txt
-#P7/files
-
-# app
-Flask
-dash
-
-# courses
-cours_calculs_distribues_donnees_massives
-
-
-P7/custom_pca_functions.py
-P7/sample_data_archive
-LightGBM_préparatoire.ipynb
-P6_00_préexploratoire.ipynb
-
+# stuff
+archive
 
 # misc
-credentials
-output
-awskeys
-.awskeys
-logs
-support_pres
-temp_path
-archive
+P6_00_préexploratoire.ipynb
+
