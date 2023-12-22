@@ -92,6 +92,7 @@ On calcule également le score de Rand ajusté sur ces deux segmentations pour �
 Le score de Rand ajusté vaut 0.04, ce qui indique une segmentation quasi-aléatoire, résultat cohérent avec l'évaluation "visuelle". Dans notre cas, avec les paramètres choisis, la méthode reposant sur l'algorithme SIFT ne permet pas d'obtenir de  bons résultats.
 
 **2. Classification avec un CNN et *transfer learning***
+
 On utilise ici la puissance des réseaux de neurones pour la reconnaissance d'image. Le jeu de données étant particulièrement réduit, il ne va pas être question d'entraîner un réseau de neurones sur ce jeu à partir de zéro, mais d'utiliser un réseau pré-entraîné et d'appliquer la technique du *transfer learning* sur ce réseau, c'est-à-dire d'utiliser les *features* calculées sur un autre jeu d'entraînement pour classer les images. Dans notre cas le réseau choisi est VGG16, réseau entraîné sur le jeu de données ImageNet et permettant de classifier chaque image dans une des 1000 classes ImageNet.
 
 En principe, on devrait ré-entraîner le modèle sur le jeu de données qu'on cherche à classifier. Pour réaliser cela, on retire du modèle VGG16 les 3 dernières couches - celles permettant la classification à proprement parler à partir des *features* calculées, et on remplace ces couches par d'autres couches *fully connected* plus adaptées au problème: par exemple une nouvelle classe *fully connected* ne contenant que 10 paramètres en sorties au lieu de 1000 dans VGG16 pourune classification en 10 classes par exemple. Ici, nous n'allons même pas ré-entrainer le modèle sur notre jeu de données: on va simplement utiliser les *features* extraites pour chaque image par le CNN, et appliquer la même méthodologie que ci-dessus pour évaluer la possibilité d'une segmentation. 
@@ -101,7 +102,7 @@ Dans notre cas, donc, la sortie du CNN dont les trois dernières couches *fully 
 ![TSNE CNN](docs/tsne_cnn.png)\
 *Comparaison des segmentations réelle et calculée à partir du traitement via le réseau de neurones à convolution VGG16*
 
-Première observation: les catégories sont visuellement repérables, ce qui est bon signe. Le score de Rand ajusté vaut maintenant 0,48 ce qui est significativement mieux que le résultat obtenu avec SIFT.
+Première observation: les catégories sont visuellement repérables, ce qui est bon signe. Deuxième observation: le score de Rand ajusté vaut maintenant 0,48 ce qui est significativement mieux que le résultat obtenu avec SIFT.
 
 ## Conclusion
 
